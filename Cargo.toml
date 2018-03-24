@@ -6,3 +6,6 @@ authors = ["Attil <attil2@gmail.com>"]
 [dependencies]
 rocket = "*"
 rocket_codegen = "*"
+diesel = { version = "*", features = ["sqlite" ]}
+r2d2-diesel = "*"
+r2d2 = "*"

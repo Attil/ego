@@ -1,11 +1,21 @@
 #![feature(plugin, decl_macro)]
 #![plugin(rocket_codegen)]
 
+#[macro_use] extern crate diesel;
+extern crate r2d2_diesel;
+extern crate r2d2;
 extern crate rocket;
 
-#[get("/<game>")]
-fn game(game: String) -> String {
-    format!("This is game: {}!", game)
+mod database;
+mod game;
+mod question;
+
+use game::Game;
+
+#[get("/start")]
+fn game() -> String {
+
+    format!("This is game!")
 }
 
 fn main() {
